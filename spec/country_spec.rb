@@ -37,7 +37,7 @@ describe ISO3166::Country do
 
   it 'should return translations' do
     expect(country.translations).to be
-    expect(country.translations['en']).to eq('United States')
+    expect(country.translations['en']).to eq('United States of America')
   end
 
   it 'should return latitude' do

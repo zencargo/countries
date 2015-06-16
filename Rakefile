@@ -34,7 +34,6 @@ task :update_cache do
 
   codes = YAML.load_file(File.join(File.dirname(__FILE__), 'lib', 'data', 'countries.yaml')) || {}
   data = {}
-  empty_translations_hash = {}
   corrections = YAML.load_file(File.join(File.dirname(__FILE__), 'lib', 'data', 'translation_corrections.yaml')) || {}
 
   I18nData.languages.keys.each do |locale|
@@ -65,6 +64,48 @@ task :update_cache do
   File.open(File.join(File.dirname(__FILE__), 'lib', 'cache', "countries"), 'wb') {|f| f.write(Marshal.dump(data))}
 end
 
+desc 'Cache OSM Translations'
+task :cache_osm_translations do
+  require 'yaml'
+  require 'i18n_data'
+
+  codes = YAML.load_file(File.join(File.dirname(__FILE__), 'lib', 'data', 'countries.yaml')) || {}
+  data = {}
+
+  codes.each do |alpha2|
+    country_osm_file = File.join(File.dirname(__FILE__), 'tmp', 'osm', 'countries', "#{alpha2}.yaml")
+    next unless File.exist? country_osm_file
+    country = YAML.load_file(country_osm_file)
+
+    data[alpha2] ||= {}
+    data[alpha2]['translations'] = country[:tags]['names']
+    data[alpha2]['translated_names'] = (country[:tags]['names'] || {}).values
+    data[alpha2]['translated_names'] = data[alpha2]['translated_names'].uniq
+
+  end
+end
+
+desc 'Cache OSM'
+task :cache_osm do
+  require 'yaml'
+  require 'iso3166'
+  require 'countries/sources/osm'
+
+  data = ISO3166::Sources::OSM.new.query_for_countries
+
+  data.each do |country|
+    alpha2 = country[:tags]['country_code_iso3166_1_alpha_2']
+    if alpha2
+      File.open(File.join(File.dirname(__FILE__), 'tmp', 'osm', 'countries', "#{alpha2}.yaml"), 'w+') do |f|
+        f.write "# EDIT DATA HERE https://www.openstreetmap.org/edit?node=#{country[:id]}\n"
+        f.write ISO3166::Sources::OSM.new.clean_data(country).to_yaml
+      end
+    else
+      puts "https://www.openstreetmap.org/edit?node=#{country[:id]} #{country[:tags]['name']}"
+    end
+  end
+end
+
 require 'geocoder'
 require 'retryable'
 # raise on geocoding errors such as query limit exceeded
@@ -73,7 +114,7 @@ Geocoder.configure(always_raise: :all)
 # @param [String] query string to geocode
 # @return [Hash] first valid result or nil
 def geocode(query)
-  Retryable.retryable(tries: 3, sleep: lambda { |n| 2**n }) do
+  Retryable.retryable(tries: 3, sleep: ->(n) { 2**n }) do
     Geocoder.search(query).first
   end
 rescue => e

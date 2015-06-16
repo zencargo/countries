@@ -3,7 +3,7 @@ module ISO3166; end
 class ISO3166::Country
   Setup = ISO3166::Setup.new
 
-  AttrReaders = [
+  [
     :number,
     :alpha2,
     :alpha3,
@@ -39,9 +39,7 @@ class ISO3166::Country
     :max_latitude,
     :latitude_dec,
     :longitude_dec
-  ]
-
-  AttrReaders.each do |meth|
+  ].each do |meth|
     define_method meth do
       @data[meth.to_s]
     end

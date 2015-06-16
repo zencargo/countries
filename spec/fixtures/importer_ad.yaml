@@ -1,0 +1,131 @@
+# PLEASE DO NOT ALTER THIS FILE
+---
+:type: node
+:id: '148874198'
+:lat: '42.5407167'
+:lon: '1.5732033'
+:tags:
+  ISO3166-1: AD
+  ISO3166-1:alpha2: AD
+  ISO3166-1:alpha3: AND
+  ISO3166-1:numeric: '020'
+  alt_name:el: "Ανδόρα"
+  capital_city: Andorra la Vella
+  is_in:continent: Europe
+  name: Andorra
+  name:ak: Andora
+  name:am: "አንዶራ"
+  name:ar: "أندورا"
+  name:be: "Андора"
+  name:be-tarask: "Андора"
+  name:bg: "Андора"
+  name:bm: Andɔr
+  name:bn: "এ্যান্ডোরা"
+  name:bo: "ཨེན་ཌོ་ར།"
+  name:br: Andorra
+  name:bs: Andora
+  name:ca: Andorra
+  name:chr: "ᎠᏂᏙᎳ"
+  name:cs: Andorra
+  name:de: Andorra
+  name:dz: "ཨཱན་དོ་ར"
+  name:ee: Andorra nutome
+  name:el: "Ανδόρρα"
+  name:en: Andorra
+  name:eo: Andoro
+  name:es: Andorra
+  name:fa: "آندورا"
+  name:ff: Anndoora
+  name:fi: Andorra
+  name:fr: Andorre
+  name:ga: Andóra
+  name:gu: "ઍંડોરા"
+  name:gv: Andorra
+  name:ha: Andora
+  name:haw: "‘Anakola"
+  name:he: "אנדורה"
+  name:hi: "अन्डोरा"
+  name:hr: Andora
+  name:hu: Andorra
+  name:hy: "Անդորրա"
+  name:id: Andora
+  name:is: Andorra
+  name:it: Andorra
+  name:ja: "アンドラ"
+  name:ka: "ანდორა"
+  name:kab: Undura
+  name:ki: Andora
+  name:kk: "Андорра"
+  name:km: "អង់ដូរ៉ា"
+  name:kn: "ಅಂಡೋರಾ"
+  name:ko: "안도라"
+  name:ks: "اٮ۪نڑورا"
+  name:ku: Andorra
+  name:lg: Andora
+  name:ln: Andorɛ
+  name:lo: "ອັນດໍລາ"
+  name:lt: Andora
+  name:lv: Andora
+  name:mk: "Андора"
+  name:ml: "അൻറോറ"
+  name:mn: "Андорра"
+  name:mr: "अँडोरा"
+  name:ne: "अन्डोर्रा"
+  name:no: Andorra
+  name:oc: Andòrra
+  name:or: "ଆଣ୍ଡୋରା"
+  name:pl: Andora
+  name:pt: Andorra
+  name:rn: Andora
+  name:ru: "Андорра"
+  name:sco: Andorrae
+  name:sg: Andôro
+  name:si: "ඇන්ඩෝරාව"
+  name:sk: Andorra
+  name:sl: Andora
+  name:sn: Andora
+  name:so: Andora
+  name:sq: Andorrë
+  name:sr: "Андора"
+  name:sv: Andorra
+  name:sw: Andora
+  name:ta: "அன்டோரா"
+  name:te: "అన్డోరా"
+  name:tg: "Андорра"
+  name:th: "ประเทศอันดอร์รา"
+  name:ti: "አንዶራ"
+  name:to: "ʻEnitola"
+  name:tt: "Андорра"
+  name:uk: "Андора"
+  name:ur: "انڈورا"
+  name:uz: Andorra
+  name:vi: Andora
+  name:yo: Orílẹ́ède Ààndórà
+  name:zh: "安道尔"
+  name:zh_pinyin: "Āndàoěr"
+  name:zu: i-Andorra
+  official_name: Principat d'Andorra
+  official_name:be: "Княства Андора"
+  official_name:be-tarask: "Княства Андора"
+  official_name:cy: Tywysogaeth Andorra
+  official_name:de: Fürstentum Andorra
+  official_name:el: "Πριγκηπάτο της Ανδόρρας"
+  official_name:fi: Andorran ruhtinaskunta
+  official_name:fr: Principauté d'Andorre
+  official_name:id: Kepangeranan Andorra
+  official_name:it: Principato d'Andorra
+  official_name:ku: Mîritiya Andorrayê
+  official_name:la: Principatus Andorrae
+  official_name:lt: Andoros Kunigaikštystė
+  official_name:lv: Andoras Firstiste
+  official_name:no: Fyrstedømmet Andorra
+  official_name:pt: Principado de Andorra
+  official_name:ru: "Княжество Андорра"
+  official_name:sk: Andorrské kniežatstvo
+  official_name:sr: "Кнежевина Андора"
+  official_name:sv: Furstendömet Andorra
+  official_name:vi: Công quốc Andora
+  place: country
+  population: '83888'
+  source:population: CIA World Factbook 2009
+  wikipedia: ca:Andorra
