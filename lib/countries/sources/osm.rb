@@ -15,7 +15,7 @@ module ISO3166
       end
 
       def query_for_countries
-        query_all 'country'
+        query_all '2'
       end
 
       def query_cities_for_country(name)
@@ -57,7 +57,7 @@ module ISO3166
       private
 
       def query_all(level)
-        ba_query = "(node[place=\"#{level}\"];);out;"
+        ba_query = "(rel['admin_level'='#{level}']['ISO3166-1:alpha2']['boundary'='administrative'];);out;"
         overpass = OverpassAPI.new
         data = overpass.raw_query(ba_query)
       end

@@ -92,16 +92,17 @@ task :cache_osm do
   require 'countries/sources/osm'
 
   data = ISO3166::Sources::OSM.new.query_for_countries
+  puts "Countries Found #{data.size}"
 
   data.each do |country|
-    alpha2 = country[:tags]['country_code_iso3166_1_alpha_2']
+    alpha2 = country[:tags]['ISO3166-1']
     if alpha2
       File.open(File.join(File.dirname(__FILE__), 'tmp', 'osm', 'countries', "#{alpha2}.yaml"), 'w+') do |f|
         f.write "# EDIT DATA HERE https://www.openstreetmap.org/edit?node=#{country[:id]}\n"
         f.write ISO3166::Sources::OSM.new.clean_data(country).to_yaml
       end
     else
-      puts "https://www.openstreetmap.org/edit?node=#{country[:id]} #{country[:tags]['name']}"
+      puts "#{country[:tags]['name']} [edit](https://www.openstreetmap.org/edit?relation=#{country[:id]})\n\n"
     end
   end
 end
