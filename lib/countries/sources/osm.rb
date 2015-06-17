@@ -62,7 +62,8 @@ module ISO3166
         data = overpass.raw_query(ba_query)
       end
 
-      def query_area(name, level, lookup_key: 'ISO3166-1')
+      def query_area(name, level, options = {})
+        lookup_key = options[:lookup_key] || 'ISO3166-1'
         ba_query = "area[\"#{lookup_key}\"=\"#{name}\"];(node[place=\"#{level}\"](area););out;"
         overpass = OverpassAPI.new
         data = overpass.raw_query(ba_query).first
