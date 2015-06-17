@@ -447,7 +447,7 @@ describe ISO3166::Country do
     end
 
     context 'when search translation found' do
-      let(:uk) { ISO3166::Country.find_country_by_translated_names('Velika Britanija') }
+      let(:uk) { ISO3166::Country.find_country_by_translated_names('Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske') }
 
       it 'should be a country instance' do
         expect(uk).to be_a(ISO3166::Country)
