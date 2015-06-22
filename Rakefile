@@ -90,10 +90,11 @@ task :cache_osm do
   require 'yaml'
   require 'iso3166'
   require 'countries/sources/osm'
-
+  codes = YAML.load_file(File.join(File.dirname(__FILE__), 'lib', 'data', 'countries.yaml')) || {}
   data = ISO3166::Sources::OSM.new.query_for_countries
-  puts "Countries Found #{data.size}"
 
+  puts "Countries Found #{data.size}"
+  puts "Expects #{codes.uniq.size}"
   data.each do |country|
     alpha2 = country[:tags]['ISO3166-1']
     if alpha2
